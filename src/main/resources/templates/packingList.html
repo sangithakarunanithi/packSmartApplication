@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Packing Checklist</title>
+</head>
+<body>
+<h1>Your Packing Checklist for <span th:text="${packingList.destination}"></span></h1>
+
+<p>Trip Type: <span th:text="${packingList.tripType}"></span></p>
+<p>Activities: <span th:text="${packingList.activities}"></span></p>
+
+<ul>
+    <li th:each="item : ${packingList.items}" th:text="${item}"></li>
+</ul>
+
+<a href="/">Generate a new packing list</a>
+</body>
+</html>

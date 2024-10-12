@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Packing Checklist Generator</title>
+</head>
+<body>
+<h1>Packing Checklist Generator</h1>
+
+<form th:action="@{/generatePackingList}" th:object="${packingList}" method="post">
+    <label for="destination">Destination:</label>
+    <input type="text" id="destination" th:field="*{destination}" /><br>
+
+    <label for="startDate">Start Date:</label>
+    <input type="date" id="startDate" th:field="*{startDate}" /><br>
+
+    <label for="endDate">End Date:</label>
+    <input type="date" id="endDate" th:field="*{endDate}" /><br>
+
+    <label for="tripType">Trip Type:</label>
+    <select id="tripType" th:field="*{tripType}">
+        <option value="Business">Business</option>
+        <option value="Adventure">Adventure</option>
+        <option value="Family">Family</option>
+    </select><br>
+
+    <label for="activities">Planned Activities:</label>
+    <input type="text" id="activities" th:field="*{activities}" /><br>
+
+    <label for="tripDuration">Trip Duration (days):</label>
+    <input type="number" id="tripDuration" th:field="*{tripDuration}" /><br>
+
+    <button type="submit">Generate Packing List</button>
+</form>
+</body>
+</html>
